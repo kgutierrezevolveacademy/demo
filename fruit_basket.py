@@ -3,21 +3,30 @@
 #Ken.Gutierrez
 #9-22-18
 
-fruit_basket = ['apple', 'banana', 'cherry', 'date', 'elderberry']
-i = 1
+def guess_fruit(guess):
+    fruit_basket = ['apple', 'banana', 'cherry', 'date', 'elderberry']
+    return (guess in fruit_basket)
+
+
+
+def main():
+    i = 1
     
-print ("Please guess the fruit in the basket: ")
-guess = str(input())
-
-while not (guess in fruit_basket) and i < 5:
-    print ("Guess again: " )
+    print ("Please guess the fruit in the basket: ")
     guess = str(input())
-    i += 1
 
-if (guess in fruit_basket):
-    print("You chose the right fruit! \n", guess, "is in the basket! \n")
-else:
-    print(guess, "is not in the fruit basket \n")
+    inBasket = guess_fruit(guess)
+    while not (inBasket) and i < 5:
+        print ("Guess again: " )
+        guess = str(input())
+        i += 1
 
+    if (inBasket):
+        print("You chose the right fruit! \n", guess, "is in the basket! \n")
+    else:
+        print(guess, "is not in the fruit basket \n")
 
-print ("Finished, Thanks for playing!")
+    print ("Finished, Thanks for playing!")
+
+main()
+
